@@ -1,11 +1,11 @@
 defmodule AdventOfCode2017.Captcha do
-  def sum(number) when is_integer(number) do
+  def sum(number, jump) when is_integer(number) do
     number
     |> digit_list
-    |> sum
+    |> sum(jump)
   end
 
-  def sum(digit_list) when is_list(digit_list) do
+  def sum(digit_list, jump) when is_list(digit_list) do
     length = length(digit_list)
     numbers =
       digit_list
@@ -14,7 +14,7 @@ defmodule AdventOfCode2017.Captcha do
     nexts =
       digit_list
       |> Stream.cycle
-      |> Stream.drop(1)
+      |> Stream.drop(jump)
       |> Enum.take(length)
 
     numbers

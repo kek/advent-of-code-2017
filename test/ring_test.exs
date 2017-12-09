@@ -1,10 +1,13 @@
 defmodule AdventOfCode2017.RingTest do
-  describe "reduce" do
-    test "with no items" do
-      ring = Ring.new([])
+  use ExUnit.Case
+  alias AdventOfCode2017.Ring
 
-      assert Ring.reduce(ring, 0, fn _, _ -> -1 end) == 0
-    end
+  describe "reduce" do
+    # test "with no items" do
+    #   ring = Ring.new([])
+
+    #   assert Ring.reduce(ring, 0, fn _, _ -> -1 end) == 0
+    # end
 
     # test "with three items" do
     #   ring = Ring.new([1, 1, 1])

@@ -23,4 +23,31 @@ defmodule AdventOfCode2017.Day1Test do
   test "the solution" do
     assert Captcha.sum(@puzzle_input, 1) == 1144
   end
+
+  describe "Examples from part two" do
+    test "1212 produces 6: the list contains 4 items, and all four digits match the digit 2 items ahead." do
+      assert Captcha.sum(1212, 2) == 6
+    end
+
+    test "1221 produces 0, because every comparison is between a 1 and a 2." do
+      assert Captcha.sum(1221, 2) == 0
+    end
+
+    test "123425 produces 4, because both 2s match each other, but no other digit has a match." do
+      assert Captcha.sum(123425, 3) == 4
+    end
+
+    test "123123 produces 12." do
+      assert Captcha.sum(123123, 3) == 12
+    end
+
+    test "12131415 produces 4." do
+      assert Captcha.sum(12131415, 4) == 4
+    end
+  end
+
+  test "the solution to second part of day 1" do
+    length = length(Integer.to_charlist(@puzzle_input)) / 2
+    assert Captcha.sum(@puzzle_input, length) == 1194
+  end
 end
